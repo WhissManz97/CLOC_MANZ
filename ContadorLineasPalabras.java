@@ -33,3 +33,24 @@ public class ContadorLineasPalabras {
                 
                 // CONTAMOS LAS PALABRAS DE LA LINEA
                 StringTokenizer letrero = new StringTokenizer(lineaLeida);
+                // Arreglo para el evitar que el programa cuente cosas innecesarias (*//import)
+                if ((letrero.countTokens() !=0 ) && (lineaLeida.indexOf("*") == -1) && (lineaLeida.indexOf("//") == -1) && (lineaLeida.length() > 0) && (lineaLeida.indexOf("import") == -1)){
+                    
+                    // AUMENTA EL CONTADOR DE LINEAS Y DE PALABRAS
+                    lineasTotales = lineasTotales + 1;
+                }
+            }
+                System.out.println("");
+                System.out.println("Lineas totales: " + lineasTotales);
+                System.out.println("Import's totales: " + importTotales);
+                System.out.println("Tareas totales: " + tareasTotales);
+                // CIERRA LA LECTURA
+                archivoLeer.close();
+            } else {
+                System.out.println("NO EXISTE EL ARCHIVO");
+            }
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
