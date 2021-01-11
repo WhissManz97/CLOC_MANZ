@@ -12,9 +12,24 @@ public class ContadorLineasPalabras {
     
     public static void main(String[] args) {
        
-        //RUTA DEL ARCHIVO A LEER
+        //Ruta de archivo a leer
         File archivo = new File("/Users/Sonatadev/Documents/WhissJava/Contador/ContadorLineasPalabras.java");
         //Con esto se llama al metodo para conteo
         contarPalabrasLineas(archivo);
     }
- 
+ //Metodo para leer archivos y conteo de cada palabra
+    public static void contarPalabrasLineas(File archivo) {
+      try {
+        // SI EXISTE EL ARCHIVO
+        if(archivo.exists()) {
+            // ABRE LECTURA
+            BufferedReader archivoLeer = new BufferedReader(new FileReader(archivo));
+            
+            String lineaLeida = null;
+            
+            // MIENTRAS LA LINEA LEIDA NO SEA NULL
+            while((lineaLeida = archivoLeer.readLine()) != null) {
+                // System.out.println(lineaLeida);
+                
+                // CONTAMOS LAS PALABRAS DE LA LINEA
+                StringTokenizer letrero = new StringTokenizer(lineaLeida);
