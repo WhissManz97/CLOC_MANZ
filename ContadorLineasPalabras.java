@@ -12,6 +12,9 @@ public class ContadorLineasPalabras {
     
     public static void main(String[] args) {
        
-        // OBJETO ARCHIVO CON LA RUTA DEL ARCHIVO A LEER
+        //RUTA DEL ARCHIVO A LEER
         File archivo = new File("/Users/Sonatadev/Documents/WhissJava/Contador/ContadorLineasPalabras.java");
+        //Con esto se llama al metodo para conteo
+        contarPalabrasLineas(archivo);
+    }
  
