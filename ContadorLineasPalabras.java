@@ -3,7 +3,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.StringTokenizer;
 import java.io.StreamTokenizer;
-import java.util.Scanner;
+import java.util.Scanner; // Librería para ingresar datos (desde consola)
 
 public class ContadorLineasPalabras {
     // Variables estáticas de inicio
@@ -14,6 +14,7 @@ public class ContadorLineasPalabras {
     public static void main(String[] args) {
         // Acción para entroducir texto (dirección de archivos)
         Scanner scanner = new Scanner(System.in);
+        // Se agrega la ruta del archivo a analizar o evaluar
         System.out.printf("\nNombre del Archivo: ");
         String archivero = scanner.nextLine();
        
