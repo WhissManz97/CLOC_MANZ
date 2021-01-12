@@ -15,7 +15,7 @@ public class ContadorLineasPalabras {
         // Acción para entroducir texto (dirección de archivos)
         Scanner scanner = new Scanner(System.in);
         // Se agrega la ruta del archivo a analizar o evaluar
-        System.out.printf("\nNombre del Archivo: ");
+        System.out.printf("\nDireccion Completa del Archivo: ");
         String archivero = scanner.nextLine();
        
         //Ruta de archivo a leer
@@ -47,12 +47,12 @@ public class ContadorLineasPalabras {
                 if ((lineaLeida.indexOf("main") != -1 ) && (lineaLeida.indexOf("if") == -1) && (lineaLeida.indexOf("System.out.println") == -1) && (lineaLeida.indexOf("mainTotales") == -1)){
                     // Aumento en el contador de "main's"   
                     mainTotales ++;
-
+                }
                 // Arreglo para evitar que el programa cuente cosas que no sean las clases    
-                if ((lineaLeida.indexOf("public static") != -1 ) && (lineaLeida.indexOf("if") == -1) && (lineaLeida.indexOf("main") == -1)){
+                if ((lineaLeida.indexOf("public static") != -1 ) && (lineaLeida.indexOf("main") == -1) && (lineaLeida.indexOf("if") == -1) && (lineaLeida.indexOf("System.out.println") == -1)){
                     // Amuento en el contador de clases (tareas)
                     tareasTotales ++;
-                        }
+                        
                     }
                 }
             }
