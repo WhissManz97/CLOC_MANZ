@@ -5,7 +5,7 @@ import java.util.StringTokenizer;
 import java.io.StreamTokenizer;
 
 public class ContadorLineasPalabras {
-
+    // Variables estáticas de inicio
     static int mainTotales = 0;
     static int lineasTotales = 0;
     static int tareasTotales = 0;
@@ -22,7 +22,7 @@ public class ContadorLineasPalabras {
       try { // Se utiliza cuando se desean prever (clarividencia) excepciones en el transcurso de un programa
         // Empieza lectura
         if(archivo.exists()) {
-            
+            // Es una clase para leer el texto de una secuencia de entrada, luego lo almacena en un búfer de caracteres.
             BufferedReader archivoLeer = new BufferedReader(new FileReader(archivo));
             
             String lineaLeida = null;
@@ -42,7 +42,7 @@ public class ContadorLineasPalabras {
                     // Aumento en el contador de "main's"   
                     mainTotales ++;
 
-                // Arreglo para evitar que el programa cuente cosas que no sean las calses    
+                // Arreglo para evitar que el programa cuente cosas que no sean las clases    
                 if ((lineaLeida.indexOf("public static") != -1 ) && (lineaLeida.indexOf("if") == -1) && (lineaLeida.indexOf("System.out.println") == -1) && (lineaLeida.indexOf("mainTotales") == -1)){
                     // Amuento en el contador de clases (tareas)
                     tareasTotales ++;
