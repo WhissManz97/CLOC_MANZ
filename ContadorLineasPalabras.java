@@ -20,23 +20,22 @@ public class ContadorLineasPalabras {
  //Metodo para leer archivos y conteo de cada palabra
     public static void contarPalabrasLineas(File archivo) {
       try {
-        // SI EXISTE EL ARCHIVO
+        // Empieza lectura
         if(archivo.exists()) {
-            // ABRE LECTURA
+            
             BufferedReader archivoLeer = new BufferedReader(new FileReader(archivo));
             
             String lineaLeida = null;
             
-            // MIENTRAS LA LINEA LEIDA NO SEA NULL
             while((lineaLeida = archivoLeer.readLine()) != null) {
                 // System.out.println(lineaLeida);
                 
-                // CONTAMOS LAS PALABRAS DE LA LINEA
+                // Conteo de palabras
                 StringTokenizer letrero = new StringTokenizer(lineaLeida);
                 // Arreglo para el evitar que el programa cuente cosas innecesarias (*//import)
                 if ((letrero.countTokens() !=0 ) && (lineaLeida.indexOf("*") == -1) && (lineaLeida.indexOf("//") == -1) && (lineaLeida.length() > 0) && (lineaLeida.indexOf("import") == -1)){
                     
-                    // AUMENTA EL CONTADOR DE LINEAS Y DE PALABRAS
+                    // Aumento en el contador de lineas
                     lineasTotales = lineasTotales + 1;
                 }
             }
@@ -44,7 +43,7 @@ public class ContadorLineasPalabras {
                 System.out.println("Lineas totales: " + lineasTotales);
                 System.out.println("Import's totales: " + importTotales);
                 System.out.println("Tareas totales: " + tareasTotales);
-                // CIERRA LA LECTURA
+                // Termina Lectura
                 archivoLeer.close();
             } else {
                 System.out.println("NO EXISTE EL ARCHIVO");
