@@ -19,7 +19,7 @@ public class ContadorLineasPalabras {
     }
  //Metodo para leer archivos y conteo de cada palabra
     public static void contarPalabrasLineas(File archivo) {
-      try {
+      try { // Se utiliza cuando se desean prever (clarividencia) excepciones en el transcurso de un programa
         // Empieza lectura
         if(archivo.exists()) {
             
@@ -41,6 +41,10 @@ public class ContadorLineasPalabras {
                 if ((lineaLeida.indexOf("main") != -1 ) && (lineaLeida.indexOf("if") == -1) && (lineaLeida.indexOf("System.out.println") == -1) && (lineaLeida.indexOf("mainTotales") == -1)){
                     // Aumento en el contador de "main's"   
                     mainTotales ++;
+
+                if (){
+                    tareasTotales ++;
+                        }
                     }
                 }
             }
