@@ -42,7 +42,9 @@ public class ContadorLineasPalabras {
                     // Aumento en el contador de "main's"   
                     mainTotales ++;
 
+                // Arreglo para evitar que el programa cuente cosas que no sean las calses    
                 if ((lineaLeida.indexOf("public static") != -1 ) && (lineaLeida.indexOf("if") == -1) && (lineaLeida.indexOf("System.out.println") == -1) && (lineaLeida.indexOf("mainTotales") == -1)){
+                    // Amuento en el contador de clases (tareas)
                     tareasTotales ++;
                         }
                     }
