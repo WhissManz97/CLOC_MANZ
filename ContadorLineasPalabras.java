@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.StringTokenizer;
 import java.io.StreamTokenizer;
+import java.util.Scanner;
 
 public class ContadorLineasPalabras {
     // Variables estáticas de inicio
@@ -11,9 +12,13 @@ public class ContadorLineasPalabras {
     static int tareasTotales = 0;
     
     public static void main(String[] args) {
+        // Acción para entroducir texto (dirección de archivos)
+        Scanner scanner = new Scanner(System.in);
+        System.out.printf("\nNombre del Archivo: ");
+        String archivero = scanner.nextLine();
        
         //Ruta de archivo a leer
-        File archivo = new File("/Users/Sonatadev/Documents/WhissJava/Contador/ContadorLineasPalabras.java");
+        File archivo = new File(archivero);
         //Con esto se llama al metodo para conteo
         contarPalabrasLineas(archivo);
     }
@@ -43,7 +48,7 @@ public class ContadorLineasPalabras {
                     mainTotales ++;
 
                 // Arreglo para evitar que el programa cuente cosas que no sean las clases    
-                if ((lineaLeida.indexOf("public static") != -1 ) && (lineaLeida.indexOf("if") == -1) && (lineaLeida.indexOf("System.out.println") == -1) && (lineaLeida.indexOf("mainTotales") == -1)){
+                if ((lineaLeida.indexOf("public static") != -1 ) && (lineaLeida.indexOf("if") == -1) && (lineaLeida.indexOf("main") == -1)){
                     // Amuento en el contador de clases (tareas)
                     tareasTotales ++;
                         }
